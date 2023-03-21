@@ -9,11 +9,27 @@
     <title>Rijksmuseum</title>
 </head>
 <body>
-    <main id="overview">
-
-            <img src="https://www.rijksmuseum.nl/assets/fdd2733b-030d-46be-ac53-932f3b719e77?w=1920&h=1080&fx=3333&fy=2025&c=c454422478deb97d5028ef15fe8ee1444efc831752f549ed9579f8f86f2b6708" alt="Alt text">
-
-        <a href="/">back home</a> 
+        <header>
+            <div class="search-wrapper">
+                <input type="search" id="search" placeholder="Zoek een kunstwerk" data-search>
+            </div>
+            <img src="./img/rijksmuseum-logo-png-transparent.webp" alt="rijksmuseum-logo-transparent">
+        </header>
+    
+        <section></section>
+    <main>
+        <section>
+            <ul id="home">
+                <% for (let i = 0; i < data.artObjects.length; i++) { %>
+                <li>
+                    <img src="<%= data.artObjects[i].webImage.url.slice(0, -3) + "=s1000" %>" alt="<%= data.artObjects[i].title %>">
+                    <h2><%= data.artObjects[i].title %></h2>
+                    <p><%= data.artObjects[i].principalOrFirstMaker %></p>
+                    <a href="/details/<%= data.artObjects[i].objectNumber %>">View details</a>
+                </li>
+                <% } %>
+            </ul>
+        </section>
     </main>
 </body>
 </html>

@@ -203,37 +203,54 @@ box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 3
 }
 /* Eind stijling van de details pagina */
 
+
+
 /* Begin stijling van de overview pagina */
-#overview > img {
-  max-width: 100vw;
-  max-height: 100vh;
-  object-fit: contain;
-  /* display: block; */
-  margin: 0 auto;
-}
+#overview {
+    min-height: 100vh;
+    background-image: url("https://www.rijksmuseum.nl/assets/fdd2733b-030d-46be-ac53-932f3b719e77?w=1920&h=1080&fx=3333&fy=2025&c=c454422478deb97d5028ef15fe8ee1444efc831752f549ed9579f8f86f2b6708");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
 
-
+#overview > a {
+    background-color: var(--accent-color);
+    color: var(--button-tekst-bg-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  }
 /* Einde stijling van de overview pagina */
+
+
 
 /* toevoegen van states voor de input */
 header input:focus {
-height: 3.5em;
-padding: 8px;
-border: 0.3rem solid var(--accent-color);
-border-radius: 5px;
-flex: 1 1 12em;
-font-size: 1rem;
-box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  height: 3.5em;
+  padding: 8px;
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 5px;
+  flex: 1 1 12em;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
 
 header input:active {
-height: 3.5em;
-padding: 8px;
-border: 0.3rem solid var(--accent-color);
-border-radius: 5px;
-flex: 1 1 12em;
-font-size: 1rem;
-box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  height: 3.5em;
+  padding: 8px;
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 5px;
+  flex: 1 1 12em;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
 /* Einde states voor de input */
 
