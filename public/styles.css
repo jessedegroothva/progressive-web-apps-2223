@@ -1,0 +1,276 @@
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: none;
+}
+
+:root {
+  --accent-color: #d55140;
+  --button-tekst-bg-color: #fff;
+  --light-bg-color: #eee;
+  --metadata-tekst-color: #767676;
+}
+
+
+
+/* Algemene stijling */
+body{
+  margin:0em 1em;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  margin: 2em 0em 1em 0em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5em;
+  /* box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%); */
+  /* Bron https://codepen.io/meyne/pen/wvXrzRL */
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+ul {
+display: grid;
+grid-template-columns: 1fr;
+margin-right: auto;
+margin-left: auto;
+}
+
+li {
+  border: 0.1rem solid var(--accent-color);
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  margin: 0.5rem;
+  background-color: var(--light-bg-color);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+/* Eind algemene stijling */
+
+
+
+/* Begin zoekbalk stijling */
+section {
+  margin: 2rem 0;
+}
+
+header input {
+height: 3.5em;
+width: 90vw;
+padding: 8px;
+border: 0.1rem solid var(--accent-color);
+border-radius: 5px;
+flex: 1 1 12em;
+font-size: 1rem;
+box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+
+header button {
+background-color: var(--accent-color);
+color: var(--button-tekst-bg-color);
+border: none;
+padding: 12px 24px;
+flex: 1 1 4em;
+border-radius: 5px;
+box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+
+header > * {
+  height: 4em;
+}
+/* Eind zoekbalk stijling */
+
+
+
+/* Logo plaatsing */
+header img {
+width: 100%;
+height: 30%;
+object-fit: cover;
+padding-top: 1rem;
+}
+/* Einde logo plaatsting */
+
+
+
+
+/* Dit zorgt voor de skeleton animation als je de pagina laad */
+.skeleton {
+margin-top: 1rem;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+height: 25em;
+border-radius: 5px;
+opacity: .7;
+animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+0% {
+  background-color: hsl(200, 20%, 70%);
+}
+100% {
+  background-color: hsl(200, 20%, 95%);
+}
+}
+/* Einde skeleton animation */
+
+
+
+/* Stijlen van de Li */
+ul li img {
+width: 100%;
+object-fit: cover;
+padding-bottom: 1rem;
+}
+
+ul li h2{
+  padding-left: .5rem;
+  padding-bottom: .5rem;
+}
+
+ul li p{
+  padding-left: .5rem;
+  color: var(--metadata-tekst-color);
+}
+
+ul li a {
+color: var(--accent-color);
+font-weight: 600;
+padding-left: .5rem;
+}
+/* Einde stijlen van de Li */
+
+
+
+/* Begin stijling van de details pagina */
+#details {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: var(--button-tekst-bg-color);
+display: flex;
+flex-direction: column;
+justify-content: left;
+}
+
+#details h2 {
+font-size: 24px;
+margin-bottom: 10px;
+margin-left: 1rem
+} 
+
+#details p {
+margin: 0;
+font-size: 1em;
+margin-bottom: .4em;
+margin-left: 1rem;
+color: var(--metadata-tekst-color);
+}
+
+#details img {
+max-width: 100%;
+padding-bottom: 1rem;
+height: 55vh;
+width: fit-content;
+margin: 0 auto;
+}
+
+#details a {
+position: absolute;
+top: 1em;
+left: 1em;
+background-color: var(--accent-color);
+color: var(--button-tekst-bg-color);
+border: none;
+padding: 12px 24px;
+flex: 1 1 4em;
+border-radius: 5px;
+box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+/* Eind stijling van de details pagina */
+
+/* Begin stijling van de overview pagina */
+#overview > img {
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  /* display: block; */
+  margin: 0 auto;
+}
+
+
+/* Einde stijling van de overview pagina */
+
+/* toevoegen van states voor de input */
+header input:focus {
+height: 3.5em;
+padding: 8px;
+border: 0.3rem solid var(--accent-color);
+border-radius: 5px;
+flex: 1 1 12em;
+font-size: 1rem;
+box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+
+header input:active {
+height: 3.5em;
+padding: 8px;
+border: 0.3rem solid var(--accent-color);
+border-radius: 5px;
+flex: 1 1 12em;
+font-size: 1rem;
+box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+/* Einde states voor de input */
+
+
+
+/* responsiveness */
+@media (max-width: 960px) and (min-width: 501px) {
+ul { 
+  grid-template-columns: 1fr 1fr; 
+} 
+
+header input {
+  height: 3.5em;
+  width: 93vw;
+  padding: 8px;
+  border: 0.1rem solid var(--accent-color);
+  border-radius: 5px;
+  flex: 1 1 12em;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+}
+
+@media (max-width: 2000px) and (min-width: 961px) {
+ul { 
+  grid-template-columns: 1fr 1fr 1fr; 
+} 
+
+header input {
+  height: 3.5em;
+  width: 96vw;
+  padding: 8px;
+  border: 0.1rem solid var(--accent-color);
+  border-radius: 5px;
+  flex: 1 1 12em;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+}
+/* Einde responsiveness */

@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/public/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Rijksmuseum</title>
 </head>
 <body>
-    <header>
-        <div class="search-wrapper">
-            <input type="search" id="search" placeholder="Zoek een kunstwerk" data-search>
-        </div>
-        <img src="./img/rijksmuseum-logo-png-transparent.webp" alt="rijksmuseum-logo-transparent">
-    </header>
-
-    <section></section>
+        <header>
+            <div class="search-wrapper">
+                <input type="search" id="search" placeholder="Zoek een kunstwerk" data-search>
+            </div>
+            <img src="./img/rijksmuseum-logo-png-transparent.webp" alt="rijksmuseum-logo-transparent">
+        </header>
+    
+        <section></section>
     <main>
-        <section><li class="skeleton"></li></section>
+        <section>
+            <ul id="home">
+                <% for (let i = 0; i < data.artObjects.length; i++) { %>
+                <li>
+                    <img src="<%= data.artObjects[i].webImage.url.slice(0, -3) + "=s1000" %>" alt="<%= data.artObjects[i].title %>">
+                    <h2><%= data.artObjects[i].title %></h2>
+                    <p><%= data.artObjects[i].principalOrFirstMaker %></p>
+                    <a href="/details/<%= data.artObjects[i].objectNumber %>">View details</a>
+                </li>
+                <% } %>
+            </ul>
+        </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/routie/0.3.2/routie.min.js"></script>
-    <script type="module" src="./javascript/script.js"></script>
 </body>
 </html>

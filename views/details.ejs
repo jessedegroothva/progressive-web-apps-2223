@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Rijksmuseum</title>
+</head>
+<body>
+    <main id="details">
+        <img src="<%= artObject.webImage.url %>" alt="<%= artObject.title %>">
+        <h2><%= artObject.title %></h2>
+        <p><%= artObject.longTitle %></p>
+        <p><%= artObject.productionPlaces.join(', ') %></p>
+        <p><%= artObject.objectNumber %></p>
+        <p><%= artObject.permitDownload %></p>
+        <p>Height: <%= artObject.webImage.height %>px</p>
+        <p>Width: <%= artObject.webImage.width %>px</p>
+        <!-- <h1>Posts</h1>
+        <h2>detail pagina</h2> -->
+        <a href="/">back home</a>
+    </main>
+</body>
+</html>
