@@ -34,20 +34,6 @@ app.get('/', (req, res) => {
 });
 
 
-// fetch de data van de API op overview pagina
-app.get('/overview', (req, res) => {
-  const url = 'https://www.rijksmuseum.nl/api/nl/collection?key=9ZKSEiYs&involvedMaker=Rembrandt+van+Rijn';
-  
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const artObjects = data.artObjects.slice(0, 10); // slice the first 10 art objects
-      res.render('overview', { data: { artObjects } }); // pass the data object to the template
-    })
-    .catch(error => console.error(error));
-});
-
-
 // fetch de data van de API op detials pagina
 app.get('/details/:objectNumber', (req, res) => {
   const url = `https://www.rijksmuseum.nl/api/nl/collection/${req.params.objectNumber}?key=9ZKSEiYs`;
@@ -62,16 +48,39 @@ app.get('/details/:objectNumber', (req, res) => {
 });
 
 
-// get search data
+// fetch de data van de API op overview pagina
+app.get('/overview', (req, res) => {
+  const url = 'https://www.rijksmuseum.nl/api/nl/collection?key=9ZKSEiYs&involvedMaker=Rembrandt+van+Rijn';
+  
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const artObjects = data.artObjects.slice(0, 10); // slice the first 10 art objects
+      res.render('overview', { data: { artObjects } }); // pass the data object to the template
+    })
+    .catch(error => console.error(error));
+});
+
+
 app.get('/search', (req, res) => {
-      // console.log(req.query.SeachTerm)
-      res.render('search'); // pass the data object to the template
-    });
+  const searchTerm = req.query.searchTerm;
+  const url = `https://www.rijksmuseum.nl/api/nl/collection?key=9ZKSEiYs&q=${searchTerm}`;
+  
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const artObjects = data.artObjects.filter(obj => obj.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      res.render('search', { data: { artObjects } });
+    })
+    .catch(error => console.error(error));
+});
+
+
 
 // userRouter is een mini router
-// const routes = require('./routes');
-
-// app.use('/', routes);
+// ****NOG UITVINDEN WAT HET IS, maar het zorgt ervoor dat de cache werkt
+const routes = require('./routes');
+app.use('/', routes);
 
 function logger(req, res, next) {
     // console.log('req.originalUrl', req.originalUrl)

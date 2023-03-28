@@ -36,7 +36,7 @@ self.addEventListener("fetch", (e) => {
                         // If the request is not a GET request,
                         // OR if the request does not start with 'http'
                         // don't cache the response
-                        if (e.request.method !== 'GET' || e.request.url.indexOf('http') !== 0) return response
+                        // if (e.request.method !== 'GET' || e.request.url.indexOf('http') !== 0) return response
 
                         // Cache the response
                         return caches.open(CACHE_NAME)

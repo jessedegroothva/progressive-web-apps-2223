@@ -24,10 +24,10 @@ body{
 header {
   margin: 2em 0em 1em 0em;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
   gap: .5em;
   /* box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%); */
   /* Bron https://codepen.io/meyne/pen/wvXrzRL */
@@ -55,6 +55,13 @@ li {
   background-color: var(--light-bg-color);
   box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: var(--accent-color);
+}
 /* Eind algemene stijling */
 
 
@@ -65,24 +72,24 @@ section {
 }
 
 header input {
-height: 3.5em;
-width: 90vw;
-padding: 8px;
-border: 0.1rem solid var(--accent-color);
-border-radius: 5px;
-flex: 1 1 12em;
-font-size: 1rem;
-box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  height: 3.5em;
+  width: 90vw;
+  padding: 8px;
+  border: 0.1rem solid var(--accent-color);
+  border-radius: 5px;
+  flex: 1 1 12em;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
 
 header button {
-background-color: var(--accent-color);
-color: var(--button-tekst-bg-color);
-border: none;
-padding: 12px 24px;
-flex: 1 1 4em;
-border-radius: 5px;
-box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  background-color: var(--accent-color);
+  color: var(--button-tekst-bg-color);
+  border: none;
+  padding: 12px 24px;
+  flex: 1 1 4em;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
 
 header > * {
@@ -94,10 +101,10 @@ header > * {
 
 /* Logo plaatsing */
 header img {
-width: 100%;
-height: 30%;
-object-fit: cover;
-padding-top: 1rem;
+  width: 100%;
+  height: 30%;
+  object-fit: cover;
+  padding-top: 1rem;
 }
 /* Einde logo plaatsting */
 
@@ -106,14 +113,14 @@ padding-top: 1rem;
 
 /* Dit zorgt voor de skeleton animation als je de pagina laad */
 .skeleton {
-margin-top: 1rem;
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-height: 25em;
-border-radius: 5px;
-opacity: .7;
-animation: skeleton-loading 1s linear infinite alternate;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 25em;
+  border-radius: 5px;
+  opacity: .7;
+  animation: skeleton-loading 1s linear infinite alternate;
 }
 
 @keyframes skeleton-loading {
@@ -130,9 +137,9 @@ animation: skeleton-loading 1s linear infinite alternate;
 
 /* Stijlen van de Li */
 ul li img {
-width: 100%;
-object-fit: cover;
-padding-bottom: 1rem;
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 1rem;
 }
 
 ul li h2{
@@ -146,9 +153,9 @@ ul li p{
 }
 
 ul li a {
-color: var(--accent-color);
-font-weight: 600;
-padding-left: .5rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  padding-left: .5rem;
 }
 /* Einde stijlen van de Li */
 
@@ -156,50 +163,50 @@ padding-left: .5rem;
 
 /* Begin stijling van de details pagina */
 #details {
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-background-color: var(--button-tekst-bg-color);
-display: flex;
-flex-direction: column;
-justify-content: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--button-tekst-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 #details h2 {
-font-size: 24px;
-margin-bottom: 10px;
-margin-left: 1rem
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 1rem
 } 
 
 #details p {
-margin: 0;
-font-size: 1em;
-margin-bottom: .4em;
-margin-left: 1rem;
-color: var(--metadata-tekst-color);
+  margin: 0;
+  font-size: 1em;
+  margin-bottom: .4em;
+  margin-left: 1rem;
+  color: var(--metadata-tekst-color);
 }
 
 #details img {
-max-width: 100%;
-padding-bottom: 1rem;
-height: 55vh;
-width: fit-content;
-margin: 0 auto;
+  max-width: 100%;
+  padding-bottom: 1rem;
+  height: 55vh;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 #details a {
-position: absolute;
-top: 1em;
-left: 1em;
-background-color: var(--accent-color);
-color: var(--button-tekst-bg-color);
-border: none;
-padding: 12px 24px;
-flex: 1 1 4em;
-border-radius: 5px;
-box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background-color: var(--accent-color);
+  color: var(--button-tekst-bg-color);
+  border: none;
+  padding: 12px 24px;
+  flex: 1 1 4em;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
 }
 /* Eind stijling van de details pagina */
 
@@ -207,27 +214,27 @@ box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 3
 
 /* Begin stijling van de overview pagina */
 #overview {
-    min-height: 100vh;
-    background-image: url("https://www.rijksmuseum.nl/assets/fdd2733b-030d-46be-ac53-932f3b719e77?w=1920&h=1080&fx=3333&fy=2025&c=c454422478deb97d5028ef15fe8ee1444efc831752f549ed9579f8f86f2b6708");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
+  min-height: 100vh;
+  background-image: url("https://www.rijksmuseum.nl/assets/fdd2733b-030d-46be-ac53-932f3b719e77?w=1920&h=1080&fx=3333&fy=2025&c=c454422478deb97d5028ef15fe8ee1444efc831752f549ed9579f8f86f2b6708");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
 
 #overview > a {
-    background-color: var(--accent-color);
-    color: var(--button-tekst-bg-color);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
-  }
+  background-color: var(--accent-color);
+  color: var(--button-tekst-bg-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
 /* Einde stijling van de overview pagina */
 
 
@@ -254,7 +261,20 @@ header input:active {
 }
 /* Einde states voor de input */
 
+/* Begin search pagina */
+/* .backhome {
+  background-color: var(--accent-color);
+  color: var(--button-tekst-bg-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
 
+.searchtitel {
+  margin-top: 1em;
+} */
+/* Einde search pagina */
 
 /* responsiveness */
 @media (max-width: 960px) and (min-width: 501px) {

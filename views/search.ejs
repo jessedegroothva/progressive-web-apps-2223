@@ -10,17 +10,39 @@
     <title>Rijksmuseum</title>
 </head>
 <body>
-        <header>
+    <!--  -->
+    
+    <!-- <button ">Ga terug naar home</button> -->
+    <header>
         <form action="/search">
-            <div class="search-wrapper">
-                
-                <input name="SeachTerm" type="search" id="search" placeholder="Zoek een kunstwerk" data-search>
-            </div>
+          <div class="search-wrapper">
+            <input name="searchTerm" type="search" id="search" placeholder="Zoek een kunstwerk" data-search>
+          </div>
         </form>
+        <a href="/overview">
             <img src="./img/rijksmuseum-logo-png-transparent.webp" alt="rijksmuseum-logo-transparent">
-        </header>
-    <h1>search</h1>
-    </main>
+        </a>
+    </header>
+
+    
+      <h1>Bekijk de zoekresultaten</h1>
+
+      <ul>
+        <% if (data.artObjects.length === 0) { %>
+          <p>Geen resultaten gevonden</p>
+        <% } else { %>
+          <% for (let i = 0; i < data.artObjects.length; i++) { %>
+            <li>
+                <img src="<%= data.artObjects[i].webImage && data.artObjects[i].webImage.url.slice(0, -3) + '=s1000' %>" alt="<%= data.artObjects[i].title %>">
+
+              <h2><%= data.artObjects[i].title %></h2>
+              <p><%= data.artObjects[i].principalOrFirstMaker %></p>
+              <a href="/details/<%= data.artObjects[i].objectNumber %>">View details</a>
+            </li>
+          <% } %>
+        <% } %>
+      </ul>
+    
     <script src="app.js"></script>
 </body>
 </html>
