@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     res.render("index");
 })
 
+
 // router.get('/details', (req, res) => {
 //     res.send('New User')
 // })

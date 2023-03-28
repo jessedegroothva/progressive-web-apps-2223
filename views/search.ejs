@@ -19,22 +19,8 @@
         </form>
             <img src="./img/rijksmuseum-logo-png-transparent.webp" alt="rijksmuseum-logo-transparent">
         </header>
-    
-        <section></section>
-    <main>
-        <section>
-            <ul id="home">
-                <% for (let i = 0; i < data.artObjects.length; i++) { %>
-                <li>
-                    <img src="<%= data.artObjects[i].webImage.url.slice(0, -3) + "=s1000" %>" alt="<%= data.artObjects[i].title %>">
-                    <h2><%= data.artObjects[i].title %></h2>
-                    <p><%= data.artObjects[i].principalOrFirstMaker %></p>
-                    <a href="/details/<%= data.artObjects[i].objectNumber %>">View details</a>
-                </li>
-                <% } %>
-            </ul>
-        </section>
+    <h1>search</h1>
     </main>
-    <script src="main.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

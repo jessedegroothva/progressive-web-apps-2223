@@ -1,3 +1,10 @@
+const https = require("https");
+const fs = require("fs");
+
+const key = fs.readFileSync("localhost-key.pem", "utf-8");
+const cert = fs.readFileSync("localhost.pem", "utf-8");
+
+
 const express = require('express')
 // applicatie wordt gemaakt
 const app = express();
@@ -16,8 +23,8 @@ app.get('/', (req, res) => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      const artObjects = data.artObjects.slice(0, 10); // slice the first 10 art objects
+      // console.log(data)
+      const artObjects = data.artObjects
       res.render('index', { data: { artObjects } }); // pass the data object to the template
     })
     .catch(error => console.error(error));
@@ -31,7 +38,7 @@ app.get('/details/:objectNumber', (req, res) => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
       const artObject = data.artObject;
       res.render('details', { artObject });
     })
@@ -45,33 +52,39 @@ app.get('/overview', (req, res) => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
       const artObjects = data.artObjects.slice(0, 10); // slice the first 10 art objects
       res.render('overview', { data: { artObjects } }); // pass the data object to the template
     })
     .catch(error => console.error(error));
 });
 
+// get search data
+app.get('/search', (req, res) => {
+      // console.log(req.query.SeachTerm)
+      res.render('search'); // pass the data object to the template
+    });
+
 // Middleware & static files
 app.use(express.static('public'));
 
 // userRouter is een mini router
-const userRouter = require('./routes/users');
+const routes = require('./routes');
 
-app.use('/users', userRouter);
+app.use('/', routes);
 
 function logger(req, res, next) {
-    console.log('req.originalUrl', req.originalUrl)
+    // console.log('req.originalUrl', req.originalUrl)
     next()
 }
 
 const port = 3000;
 
-app.listen(port, ()=>{
-    console.log(`App is listening on port http://127.0.0.1:${port}`)
-})
+https.createServer({ key, cert }, app).listen(port,()=>{
+  console.log(`App is listening on port https://localhost:${port}/overview`)
+});
 
-
-
-  
+// app.listen(port, ()=>{
+//     console.log(`App is listening on port http://127.0.0.1:${port}`)
+// })
 
