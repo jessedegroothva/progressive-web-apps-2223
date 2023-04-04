@@ -13,12 +13,20 @@
   --metadata-tekst-color: #767676;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('font/Inter-Medium.woff') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 /* Algemene stijling */
 body{
   margin:0em 1em;
   font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 header {
@@ -35,7 +43,7 @@ header {
 
 p {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 ul {
@@ -58,7 +66,7 @@ li {
 
 h1 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 1rem 0;
   color: var(--accent-color);
 }
@@ -154,7 +162,7 @@ ul li p{
 
 ul li a {
   color: var(--accent-color);
-  font-weight: 600;
+  font-weight: 400;
   padding-left: .5rem;
 }
 /* Einde stijlen van de Li */
