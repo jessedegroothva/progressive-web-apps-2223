@@ -4,7 +4,7 @@ const fs = require("fs");
 const key = fs.readFileSync("localhost-key.pem", "utf-8");
 const cert = fs.readFileSync("localhost.pem", "utf-8");
 
-// responds to the webpage with the express library
+// reageert op de webpage met de express library
 const express = require('express')
 
 // applicatie wordt gemaakt
