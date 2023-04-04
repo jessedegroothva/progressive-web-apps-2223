@@ -1,5 +1,5 @@
 ## Readme
-<br>
-git clone https://github.com/jornveltrop/progressive-web-apps-2122.git
 
 <br>
+
+Bekijk mijn Reamd.me op [Notion](https://www.notion.so/De-juiste-manier-264a874e75824fd494ddc433f1b11bc1?pvs=4)
